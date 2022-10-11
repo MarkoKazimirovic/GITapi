@@ -41,12 +41,14 @@ textCheck <- function(userName, token){
 }
 
 statusCheck <- function(APIresponse){
-  if(APIresponse$status_code == 401 || length(httr::content(APIresponse)) == 0) {
-    stop("Unauthorized access with invalid user name or password", call. = FALSE)
+  if(APIresponse$status_code == 401) {
+    stop("Unauthorized acces with invalid user name or password", call. = FALSE)
   } else if (APIresponse$status_code != 200){
     stop("Something went wrong", call. = FALSE)
   } else if (httr::http_type(APIresponse) != "application/json") {
     stop("API did not return json", call. = FALSE)
+  } else if(length(httr::content(APIresponse)) == 0) {
+    stop("Empty API response", call. = FALSE)
   }
 }
 
