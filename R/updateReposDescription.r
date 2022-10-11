@@ -6,8 +6,8 @@ reposChecker <- function(x, reposToUpdate) {
 
 updateReposDescription <- function(x, reposToUpdate, newDescription){
   reposChecker(x, reposToUpdate)
-  PATCH(
-    url = modify_url("https://api.github.com/",
+  httr::PATCH(
+    url = httr::modify_url("https://api.github.com/",
                      path = paste0("repos/", x$user,"/", reposToUpdate))
     , config =  x$userAuth
     , body = list(description = as.character(newDescription) )

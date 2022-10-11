@@ -10,19 +10,17 @@
 #' @return tokenAuthentication() for authenticated user return a list of credentials (user-name, token, url) along with httr authentication() and response() objects
 #' @export
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
 #' ## Wrong entered credintials
 #' tokenAuthentication("Mickey mouse", ".")
 
-
-
 tokenAuthentication <- function(userName = NULL, token= NULL){
   cred <- textCheck(userName, token)
-  userAuth <- authenticate(cred$user,
+  userAuth <- httr::authenticate(cred$user,
                            cred$pass)
-  response <- GET(url = cred$url
-                  , config = userAuth
-                  )
+  response <- httr::GET(url = cred$url
+                        , config = userAuth
+  )
   statusCheck(response)
   c(cred,
     userAuth = list(userAuth),
@@ -43,11 +41,11 @@ textCheck <- function(userName, token){
 }
 
 statusCheck <- function(APIresponse){
-  if(APIresponse$status_code == 401 || length(content(APIresponse)) == 0) {
+  if(APIresponse$status_code == 401 || length(httr::content(APIresponse)) == 0) {
     stop("Unauthorized access with invalid user name or password", call. = FALSE)
   } else if (APIresponse$status_code != 200){
     stop("Something went wrong", call. = FALSE)
-  } else if (http_type(APIresponse) != "application/json") {
+  } else if (httr::http_type(APIresponse) != "application/json") {
     stop("API did not return json", call. = FALSE)
   }
 }

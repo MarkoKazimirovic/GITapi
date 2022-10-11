@@ -1,5 +1,5 @@
 parser <- function(x){
-  jsonlite::fromJSON(content(x, "text"),
+  jsonlite::fromJSON(httr::content(x, "text"),
                      simplifyVector = FALSE)
 }
 fromParsed <- function(x, endpoint){
