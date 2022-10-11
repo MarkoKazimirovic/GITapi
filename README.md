@@ -26,10 +26,10 @@ jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 20:20
+    ##   Date: 2022-10-11 21:13
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
-    ##   Size: 6.17 kB
+    ##   Size: 6.15 kB
     ## [
     ##   {
     ##     "id": 549790882,
@@ -50,9 +50,9 @@ accesibleRepos
 ```
 
     ## # A tibble: 1 x 2
-    ##   availableRepositories Description      
-    ##   <chr>                 <chr>            
-    ## 1 testingGITapi         SevenBridges task
+    ##   availableRepositories Description
+    ##   <chr>                 <chr>      
+    ## 1 testingGITapi         " "
 
 -   Updating Description of some repository:
 
@@ -66,13 +66,16 @@ updateReposDescription(x = accesibleRepos,
 
 ``` r
 ## Lets check message
+```
+
+``` r
 accesibleRepos
 ```
 
     ## # A tibble: 1 x 2
-    ##   availableRepositories Description
-    ##   <chr>                 <chr>      
-    ## 1 testingGITapi         Sev
+    ##   availableRepositories Description      
+    ##   <chr>                 <chr>            
+    ## 1 testingGITapi         SevenBridges task
 
 -   Listing usernames of collaborators for repository:
 
@@ -81,7 +84,7 @@ ReposCollaborator(x = accesibleRepos,
               repos = "testingGITapi")
 ```
 
-    ## [1] "jemeljanPugacov"
+    ## [1] "MarkoKazimirovic" "jemeljanPugacov"
 
 -   Adding collaborators to repository:
 
@@ -92,3 +95,14 @@ addReposCollaborator(x = accesibleRepos,
 ```
 
     ## MarkoKazimirovic added as collaborator with push permission!
+
+``` r
+## Lets check message
+```
+
+``` r
+ReposCollaborator(x = accesibleRepos,
+              repos = "testingGITapi")
+```
+
+    ## [1] "MarkoKazimirovic" "jemeljanPugacov"

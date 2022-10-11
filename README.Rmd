@@ -36,11 +36,14 @@ accesibleRepos
 
 -   Updating Description of some repository:
 
-```{r updateDesc, echo = FALSE, message=FALSE}
+```{r updateDescr}
 updateReposDescription(x = accesibleRepos,
                        reposToUpdate = "testingGITapi",
-                       newDescription = "Sev")
+                       newDescription = "SevenBridges task")
+## Lets check message
+```
 
+```{r updateDesc, echo = FALSE, message=FALSE}
 jemeljan <- tokenAuthentication(
                      userName = 'jemeljanPugacov',
                         token = "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"
@@ -48,13 +51,8 @@ jemeljan <- tokenAuthentication(
 accesibleRepos <- listRepos(x = jemeljan)
 ```
 
-```{r updateDescr}
-updateReposDescription(x = accesibleRepos,
-                       reposToUpdate = "testingGITapi",
-                       newDescription = "SevenBridges task")
-## Lets check message
+```{r printUpdateDesc}
 accesibleRepos
-
 ```
 
 -   Listing usernames of collaborators for repository:
@@ -68,4 +66,11 @@ ReposCollaborator(x = accesibleRepos,
 addReposCollaborator(x = accesibleRepos,
                      repos = "testingGITapi",
                      collabName = "MarkoKazimirovic")
+## Lets check message
+
+```
+
+```{r addCollaborators2}
+ReposCollaborator(x = accesibleRepos,
+              repos = "testingGITapi")
 ```

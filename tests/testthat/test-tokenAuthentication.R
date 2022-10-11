@@ -9,5 +9,4 @@ test_that("Here was possible to test only expected error", {
                "Token is not entered properly!", fixed=TRUE)
   expect_error(tokenAuthentication(c("Mickey", "mouse"), NULL),
                "User name is not entered properly!", fixed=TRUE)
-
 })
