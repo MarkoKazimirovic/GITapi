@@ -2,6 +2,7 @@
 #'
 #'This function checks if the given credentials are entered properly to enable the connection to the JSON file.
 #'Submitting a non-existing user-name or token will result in an unauthorized access error.
+#'Function intentionally forces the user to enter proper credentials.
 #'
 #' @param userName Must be entered as a single string without whitespace, the violation will throw a dedicated error.
 #' @param token Must be entered as a single string without whitespace, the violation will throw a dedicated error.
