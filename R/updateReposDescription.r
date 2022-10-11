@@ -1,13 +1,17 @@
-#' Title
+#' The function allow the authenticated user to update description of repository from list.
 #'
-#' @param x
-#' @param reposToUpdate
-#' @param newDescription
+#' @param x First input is an object returned by listRepos().
+#' @param reposToUpdate Name of repository stated in the list of repositories available to the authenticated user.
+#' @param newDescription New description for selected repository.
 #'
-#' @return
+#' @return The message informs users about the successful update or throws an error if the wrong repos names are entered.
 #' @export
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
+#' updateReposDescription(x = accesibleRepos,
+#'                        reposToUpdate = "someReposOnList",
+#'                        newDescription = "SevenBridges task")
+#'
 updateReposDescription <- function(x, reposToUpdate, newDescription){
   reposChecker(x, reposToUpdate)
   httr::PATCH(

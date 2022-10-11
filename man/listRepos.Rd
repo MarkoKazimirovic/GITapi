@@ -2,13 +2,25 @@
 % Please edit documentation in R/listRepos.r
 \name{listRepos}
 \alias{listRepos}
-\title{Title}
+\title{Listing the repositories accessible for authenticated users accompanied with
+the repo's description.Function parse API response and extract information
+about available repos and their descriptions.}
 \usage{
 listRepos(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{Single input is object returned by tokenAuthentication()}
+}
+\value{
+Object of apiInfo class.
 }
 \description{
-Title
+Listing the repositories accessible for authenticated users accompanied with
+the repo's description.Function parse API response and extract information
+about available repos and their descriptions.
+}
+\examples{
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+listRepos(x = user)
+\dontshow{\}) # examplesIf}
 }

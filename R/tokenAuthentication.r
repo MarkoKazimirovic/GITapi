@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
-#' ## Wrong entered credintials
+#' ## Wrongly entered credintials
 #' tokenAuthentication("Mickey mouse", ".")
 
 tokenAuthentication <- function(userName = NULL, token= NULL){

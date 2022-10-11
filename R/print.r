@@ -1,15 +1,14 @@
 #' Print the result of a GitHub API call
 #'
 #' @param x The result object from listRepos()
-#' @param ...Ignored.
+#' @param ... Other arguments to print generic.
 #'
-#' @importFrom tibble
 #' @return The tibble result with repos and description columns.
 #' @export
 #' @method print apiInfo
 
 print.apiInfo <- function(x, ...) {
-  tbl <- tibble::tibble(d = x$accesibleRepos,
+  tbl <- tibble::tibble(availableRepositiries = x$accesibleRepos,
                         Description = x$reposDescription)
   print(tbl)
 }

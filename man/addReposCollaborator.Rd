@@ -2,13 +2,33 @@
 % Please edit documentation in R/addColab.r
 \name{addReposCollaborator}
 \alias{addReposCollaborator}
-\title{Title}
+\title{Adding collaborators with custom permision level to the repository accessible
+for the authenticated user. The function will check the existence of the proposed
+collaborator (collabName) and throw an error if collabName is not existing.}
 \usage{
 addReposCollaborator(x, repos, collabName, permission = "push")
 }
 \arguments{
-\item{permission}{}
+\item{x}{First input is an object returned by listRepos().}
+
+\item{repos}{Name of repository stated in the list of repositories available to the authenticated user.}
+
+\item{collabName}{Existing collaborate user name on GIThub. Entering wrong name will cause error.name wil}
+
+\item{permission}{One of the following permissions to be set: "pull", "triage", "push", "maintain", "admin." Default is "push"}
+}
+\value{
+The message informs users about the successful adding of the collaborator or throws an error if the wrong repo names or non-existing collaborator are entered.
 }
 \description{
-Title
+Adding collaborators with custom permision level to the repository accessible
+for the authenticated user. The function will check the existence of the proposed
+collaborator (collabName) and throw an error if collabName is not existing.
+}
+\examples{
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+addReposCollaborator(x = accesibleRepos,
+                     repos = "markosThings",
+                     collabName = "madicdsd")
+\dontshow{\}) # examplesIf}
 }

@@ -1,11 +1,14 @@
-#' Title
+#' Listing the repositories accessible for authenticated users accompanied with
+#' the repo's description.Function parse API response and extract information
+#' about available repos and their descriptions.
 #'
-#' @param x
+#' @param x Single input is object returned by tokenAuthentication()
 #'
-#' @return
+#' @return Object of apiInfo class.
 #' @export
 #'
-#' @examples
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
+#' listRepos(x = user)
 listRepos <- function(x){
   parsedAPIresponse <- parser(x$response)
   structure(

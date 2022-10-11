@@ -2,13 +2,27 @@
 % Please edit documentation in R/updateReposDescription.r
 \name{updateReposDescription}
 \alias{updateReposDescription}
-\title{Title}
+\title{The function allow the authenticated user to update description of repository from list.}
 \usage{
 updateReposDescription(x, reposToUpdate, newDescription)
 }
 \arguments{
-\item{newDescription}{}
+\item{x}{First input is an object returned by listRepos().}
+
+\item{reposToUpdate}{Name of repository stated in the list of repositories available to the authenticated user.}
+
+\item{newDescription}{New description for selected repository.}
+}
+\value{
+The message informs users about the successful update or throws an error if the wrong repos names are entered.
 }
 \description{
-Title
+The function allow the authenticated user to update description of repository from list.
+}
+\examples{
+\dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+updateReposDescription(x = accesibleRepos,
+                       reposToUpdate = "someReposOnList",
+                       newDescription = "SevenBridges task")
+\dontshow{\}) # examplesIf}
 }

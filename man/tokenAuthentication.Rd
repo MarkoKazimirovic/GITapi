@@ -21,7 +21,7 @@ Function intentionally forces the user to enter proper credentials.
 }
 \examples{
 \dontshow{if (identical(Sys.getenv("IN_PKGDOWN"), "true")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-## Wrong entered credintials
+## Wrongly entered credintials
 tokenAuthentication("Mickey mouse", ".")
 \dontshow{\}) # examplesIf}
 }

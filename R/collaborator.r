@@ -1,13 +1,17 @@
-#' Title
+#' Listing the collaborators of the authenticated user on the repository
+#' with the given name.
 #'
-#' @param x
-#' @param repos
+#' @param x First input is an object returned by listRepos().
+#' @param repos Name of repository stated in the list of repositories available to the authenticated user.
 #'
-#' @return
+#' @return The vector with the names of collaborators on a given repository.
 #' @export
 #'
-#' @examples
-ReposCollaborator <- function(x, repos){
+#' @examplesIf identical(Sys.getenv("IN_PKGDOWN"), "true")
+#' ReposCollaborator(x     = accesibleRepos,
+#'                   repos = "someReposOnList")
+#'
+ReposCollaborator <- function(x, repos = NULL){
   reposChecker(x, repos)
   response <- httr::GET(url = httr::modify_url("https://api.github.com/",
                                    path = paste0("repos/", x$user,"/", repos, "/collaborators"))
@@ -17,13 +21,6 @@ ReposCollaborator <- function(x, repos){
   collaborators <- fromParsed(parsedAPIresponse, "login")
 }
 
-collabCheck <- function(collabName){
-  res <- httr::HEAD(url = httr::modify_url("https://api.github.com/",
-                               path = paste0("users/", as.character(collabName))))
-  if(res$status_code != 200){
-    stop(paste0("Stated collaborator ", as.character(collabName), " is not on GitHub!"), call. = FALSE)
-  }
-}
 
 
 
