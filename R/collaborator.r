@@ -19,6 +19,7 @@ ReposCollaborator <- function(x, repos = NULL){
   )
   parsedAPIresponse <- parser(response)
   collaborators <- fromParsed(parsedAPIresponse, "login")
+  print(collaborators)
 }
 
 

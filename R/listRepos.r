@@ -11,16 +11,18 @@
 #' listRepos(x = user)
 listRepos <- function(x){
   parsedAPIresponse <- parser(x$response)
-  structure(
-    list(
-      user = x$user,
-      userAuth = x$userAuth,
-      accesibleRepos = fromParsed(parsedAPIresponse,
-                                  "name"),
-      reposDescription = fromParsed(parsedAPIresponse,
-                                    "description")
-    ),
-    class = "apiInfo"
+  print(
+    structure(
+      list(
+        user = x$user,
+        userAuth = x$userAuth,
+        accesibleRepos = fromParsed(parsedAPIresponse,
+                                    "name"),
+        reposDescription = fromParsed(parsedAPIresponse,
+                                      "description")
+      ),
+      class = "apiInfo"
+    )
   )
 }
 

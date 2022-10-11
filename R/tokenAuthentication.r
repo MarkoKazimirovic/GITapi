@@ -22,9 +22,9 @@ tokenAuthentication <- function(userName = NULL, token= NULL){
                         , config = userAuth
   )
   statusCheck(response)
-  c(cred,
-    userAuth = list(userAuth),
-    response = list(response))
+  print(c(cred,
+          userAuth = list(userAuth),
+          response = list(response)))
 }
 
 textCheck <- function(userName, token){
