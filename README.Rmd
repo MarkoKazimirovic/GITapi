@@ -19,7 +19,7 @@ Library support following functionalities:
 
 ```{r authentication}
 library(GITapi)
-## Account and token maded just for testing purposes
+## Account and token made just for testing purposes
 jemeljan <- tokenAuthentication(
                      userName = 'jemeljanPugacov',
                         token = "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"
@@ -34,3 +34,22 @@ accesibleRepos <- listRepos(x = jemeljan)
 accesibleRepos
 ```
 
+-   Updating Description of some repository:
+```{r updateDesc, echo = FALSE}
+updateReposDescription(x = accesibleRepos,
+                       reposToUpdate = "testingGITapi",
+                       newDescription = "SevenBridges task")
+jemeljan <- tokenAuthentication(
+                     userName = 'jemeljanPugacov',
+                        token = "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"
+                     )
+accesibleRepos <- listRepos(x = jemeljan)
+```
+
+```{r updateDescr}
+updateReposDescription(x = accesibleRepos,
+                       reposToUpdate = "testingGITapi",
+                       newDescription = "SevenBridges task")
+accesibleRepos
+
+```

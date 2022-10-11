@@ -8,7 +8,7 @@
 #' @method print apiInfo
 
 print.apiInfo <- function(x, ...) {
-  tbl <- tibble::tibble(availableRepositiries = x$accesibleRepos,
+  tbl <- tibble::tibble(availableRepositories = x$accesibleRepos,
                         Description = x$reposDescription)
   print(tbl)
 }

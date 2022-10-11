@@ -17,7 +17,7 @@ Library support following functionalities:
 
 ``` r
 library(GITapi)
-## Account and token maded just for testing purposes
+## Account and token made just for testing purposes
 jemeljan <- tokenAuthentication(
                      userName = 'jemeljanPugacov',
                         token = "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"
@@ -26,7 +26,7 @@ jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:00
+    ##   Date: 2022-10-11 19:13
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
     ##   Size: 6.15 kB
@@ -53,3 +53,26 @@ accesibleRepos
     ##   availableRepositiries Description
     ##   <chr>                 <chr>      
     ## 1 testingGITapi         " "
+
+-   Updating Description of some repository:
+
+<!-- -->
+
+    ## Description of testingGITapi repos has been updated!
+
+``` r
+updateReposDescription(x = accesibleRepos,
+                       reposToUpdate = "testingGITapi",
+                       newDescription = "SevenBridges task")
+```
+
+    ## Description of testingGITapi repos has been updated!
+
+``` r
+accesibleRepos
+```
+
+    ## # A tibble: 1 x 2
+    ##   availableRepositiries Description      
+    ##   <chr>                 <chr>            
+    ## 1 testingGITapi         SevenBridges task
