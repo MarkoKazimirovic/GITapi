@@ -1,5 +1,5 @@
 
-# GITapi - Seven Bridges Homework
+# GITapi - Seven Bridges Homework \| Marko Kazimirovic
 
 ## Installation
 
@@ -26,10 +26,10 @@ jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:13
+    ##   Date: 2022-10-11 19:21
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
-    ##   Size: 6.15 kB
+    ##   Size: 6.17 kB
     ## [
     ##   {
     ##     "id": 549790882,
@@ -50,15 +50,11 @@ accesibleRepos
 ```
 
     ## # A tibble: 1 x 2
-    ##   availableRepositiries Description
-    ##   <chr>                 <chr>      
-    ## 1 testingGITapi         " "
+    ##   availableRepositiries Description      
+    ##   <chr>                 <chr>            
+    ## 1 testingGITapi         SevenBridges task
 
 -   Updating Description of some repository:
-
-<!-- -->
-
-    ## Description of testingGITapi repos has been updated!
 
 ``` r
 updateReposDescription(x = accesibleRepos,
@@ -69,6 +65,7 @@ updateReposDescription(x = accesibleRepos,
     ## Description of testingGITapi repos has been updated!
 
 ``` r
+## Description is there
 accesibleRepos
 ```
 
@@ -76,3 +73,10 @@ accesibleRepos
     ##   availableRepositiries Description      
     ##   <chr>                 <chr>            
     ## 1 testingGITapi         SevenBridges task
+
+-   Listing usernames of collaborators for repository:
+
+``` r
+ReposCollaborator(x = accesibleRepos,
+              repos = "testingGITapi")
+```
