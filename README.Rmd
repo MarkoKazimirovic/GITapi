@@ -39,7 +39,7 @@ accesibleRepos
 ```{r updateDesc, echo = FALSE, message=FALSE}
 updateReposDescription(x = accesibleRepos,
                        reposToUpdate = "testingGITapi",
-                       newDescription = "SevenBridges task")
+                       newDescription = "Sev")
 
 jemeljan <- tokenAuthentication(
                      userName = 'jemeljanPugacov',

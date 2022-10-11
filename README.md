@@ -22,47 +22,11 @@ jemeljan <- tokenAuthentication(
                      userName = 'jemeljanPugacov',
                         token = "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"
                      )
-```
-
-    ## $user
-    ## [1] "jemeljanPugacov"
-    ## 
-    ## $pass
-    ## [1] "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"
-    ## 
-    ## $url
-    ## [1] "https://api.github.com/user/repos"
-    ## 
-    ## $userAuth
-    ## <request>
-    ## Options:
-    ## * httpauth: 1
-    ## * userpwd: jemeljanPugacov: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
-    ## 
-    ## $response
-    ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:44
-    ##   Status: 200
-    ##   Content-Type: application/json; charset=utf-8
-    ##   Size: 6.17 kB
-    ## [
-    ##   {
-    ##     "id": 549790882,
-    ##     "node_id": "R_kgDOIMUkog",
-    ##     "name": "testingGITapi",
-    ##     "full_name": "jemeljanPugacov/testingGITapi",
-    ##     "private": true,
-    ##     "owner": {
-    ##       "login": "jemeljanPugacov",
-    ##       "id": 115584040,
-    ## ...
-
-``` r
 jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:44
+    ##   Date: 2022-10-11 20:20
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
     ##   Size: 6.17 kB
@@ -82,14 +46,6 @@ jemeljan$response
 
 ``` r
 accesibleRepos <- listRepos(x = jemeljan)
-```
-
-    ## # A tibble: 1 x 2
-    ##   availableRepositories Description      
-    ##   <chr>                 <chr>            
-    ## 1 testingGITapi         SevenBridges task
-
-``` r
 accesibleRepos
 ```
 
@@ -100,59 +56,11 @@ accesibleRepos
 
 -   Updating Description of some repository:
 
-<!-- -->
-
-    ## Warning: Unknown or uninitialised column: `user`.
-
-    ## Warning: Unknown or uninitialised column: `userAuth`.
-
-    ## $user
-    ## [1] "jemeljanPugacov"
-    ## 
-    ## $pass
-    ## [1] "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"
-    ## 
-    ## $url
-    ## [1] "https://api.github.com/user/repos"
-    ## 
-    ## $userAuth
-    ## <request>
-    ## Options:
-    ## * httpauth: 1
-    ## * userpwd: jemeljanPugacov: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
-    ## 
-    ## $response
-    ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:44
-    ##   Status: 200
-    ##   Content-Type: application/json; charset=utf-8
-    ##   Size: 6.17 kB
-    ## [
-    ##   {
-    ##     "id": 549790882,
-    ##     "node_id": "R_kgDOIMUkog",
-    ##     "name": "testingGITapi",
-    ##     "full_name": "jemeljanPugacov/testingGITapi",
-    ##     "private": true,
-    ##     "owner": {
-    ##       "login": "jemeljanPugacov",
-    ##       "id": 115584040,
-    ## ...
-
-    ## # A tibble: 1 x 2
-    ##   availableRepositories Description      
-    ##   <chr>                 <chr>            
-    ## 1 testingGITapi         SevenBridges task
-
 ``` r
 updateReposDescription(x = accesibleRepos,
                        reposToUpdate = "testingGITapi",
                        newDescription = "SevenBridges task")
 ```
-
-    ## Warning: Unknown or uninitialised column: `user`.
-
-    ## Warning: Unknown or uninitialised column: `userAuth`.
 
     ## Description of testingGITapi repos has been updated!
 
@@ -162,9 +70,9 @@ accesibleRepos
 ```
 
     ## # A tibble: 1 x 2
-    ##   availableRepositories Description      
-    ##   <chr>                 <chr>            
-    ## 1 testingGITapi         SevenBridges task
+    ##   availableRepositories Description
+    ##   <chr>                 <chr>      
+    ## 1 testingGITapi         Sev
 
 -   Listing usernames of collaborators for repository:
 
@@ -173,11 +81,7 @@ ReposCollaborator(x = accesibleRepos,
               repos = "testingGITapi")
 ```
 
-    ## Warning: Unknown or uninitialised column: `user`.
-
-    ## Warning: Unknown or uninitialised column: `userAuth`.
-
-    ## [1] NA NA
+    ## [1] "jemeljanPugacov"
 
 -   Adding collaborators to repository:
 
@@ -186,9 +90,5 @@ addReposCollaborator(x = accesibleRepos,
                      repos = "testingGITapi",
                      collabName = "MarkoKazimirovic")
 ```
-
-    ## Warning: Unknown or uninitialised column: `user`.
-
-    ## Warning: Unknown or uninitialised column: `userAuth`.
 
     ## MarkoKazimirovic added as collaborator with push permission!

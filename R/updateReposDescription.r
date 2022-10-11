@@ -25,8 +25,9 @@ updateReposDescription <- function(x, reposToUpdate, newDescription){
 }
 
 reposChecker <- function(x, reposToUpdate) {
-  if (!(as.character(reposToUpdate) %in% x$availableRepositories)) {
-    stop("Stated repos in not on the list of available repos!", call. = FALSE)
+
+  if (!(as.character(reposToUpdate) %in% x$accesibleRepos)) {
+    stop(paste0("Stated repos in not on the list of available repos!", x$accesibleRepos), call. = FALSE)
   }
 }
 
