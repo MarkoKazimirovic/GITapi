@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# GITapi - Seven Bridges Homework | Marko Kazimirovic
+# GITapi - Seven Bridges Homework \| Marko Kazimirovic
 
 ## Installation
 
@@ -35,6 +35,7 @@ accesibleRepos
 ```
 
 -   Updating Description of some repository:
+
 ```{r updateDesc, echo = FALSE, message=FALSE}
 updateReposDescription(x = accesibleRepos,
                        reposToUpdate = "testingGITapi",
@@ -50,12 +51,20 @@ accesibleRepos <- listRepos(x = jemeljan)
 updateReposDescription(x = accesibleRepos,
                        reposToUpdate = "testingGITapi",
                        newDescription = "SevenBridges task")
-## Description is there
+## Lets check message
 accesibleRepos
 
 ```
+
 -   Listing usernames of collaborators for repository:
+
 ```{r collaborators}
 ReposCollaborator(x = accesibleRepos,
               repos = "testingGITapi")
+```
+-   Adding collaborators to repository:
+```{r addCollaborators}
+addReposCollaborator(x = accesibleRepos,
+                     repos = "testingGITapi",
+                     collabName = "MarkoKazimirovic")
 ```

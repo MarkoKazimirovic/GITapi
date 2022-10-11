@@ -26,7 +26,7 @@ jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 19:21
+    ##   Date: 2022-10-11 19:30
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
     ##   Size: 6.17 kB
@@ -65,7 +65,7 @@ updateReposDescription(x = accesibleRepos,
     ## Description of testingGITapi repos has been updated!
 
 ``` r
-## Description is there
+## Lets check message
 accesibleRepos
 ```
 
@@ -80,3 +80,13 @@ accesibleRepos
 ReposCollaborator(x = accesibleRepos,
               repos = "testingGITapi")
 ```
+
+-   Adding collaborators to repository:
+
+``` r
+addReposCollaborator(x = accesibleRepos,
+                     repos = "testingGITapi",
+                     collabName = "MarkoKazimirovic")
+```
+
+    ## MarkoKazimirovic added as collaborator with push permission!
