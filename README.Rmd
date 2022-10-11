@@ -49,7 +49,6 @@ jemeljan <- tokenAuthentication(
                         token = "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"
                      )
 accesibleRepos <- listRepos(x = jemeljan)
-
 ```
 
 ```{r printUpdateDesc}

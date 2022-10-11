@@ -26,10 +26,10 @@ jemeljan$response
 ```
 
     ## Response [https://api.github.com/user/repos]
-    ##   Date: 2022-10-11 21:34
+    ##   Date: 2022-10-11 21:39
     ##   Status: 200
     ##   Content-Type: application/json; charset=utf-8
-    ##   Size: 6.17 kB
+    ##   Size: 6.15 kB
     ## [
     ##   {
     ##     "id": 549790882,
@@ -50,9 +50,9 @@ accesibleRepos
 ```
 
     ## # A tibble: 1 x 2
-    ##   availableRepositories Description      
-    ##   <chr>                 <chr>            
-    ## 1 testingGITapi         SevenBridges task
+    ##   availableRepositories Description
+    ##   <chr>                 <chr>      
+    ## 1 testingGITapi         " "
 
 -   Updating Description of some repository:
 
