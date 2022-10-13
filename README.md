@@ -84,7 +84,7 @@ ReposCollaborator(x = accesibleRepos,
               repos = "testingGITapi")
 ```
 
-    ## [1] "MarkoKazimirovic" "jemeljanPugacov"
+    ## [1] "jemeljanPugacov"
 
 -   Adding collaborators to repository:
 
